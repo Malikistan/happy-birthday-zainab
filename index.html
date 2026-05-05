@@ -151,6 +151,47 @@
       setTimeout(() => launchConfetti(), 800);
       setTimeout(() => launchConfetti(), 1800);
     };
+    // 🎮 Balloon Game
+function startGame() {
+  const gameArea = document.getElementById("gameArea");
+  gameArea.classList.remove("hidden");
+  gameArea.innerHTML = "";
+
+  for (let i = 0; i < 10; i++) {
+    const balloon = document.createElement("div");
+    balloon.innerHTML = "🎈";
+    balloon.style.position = "absolute";
+    balloon.style.fontSize = "40px";
+    balloon.style.left = Math.random() * 90 + "%";
+    balloon.style.top = "100%";
+    balloon.style.cursor = "pointer";
+
+    balloon.onclick = () => {
+      balloon.remove();
+    };
+
+    gameArea.appendChild(balloon);
+
+    let pos = 100;
+    const floatUp = setInterval(() => {
+      pos -= 1;
+      balloon.style.top = pos + "%";
+
+      if (pos < -10) {
+        clearInterval(floatUp);
+        balloon.remove();
+      }
+    }, 30);
+  }
+}
+
+// 🎁 Surprise Feature
+function showSurprise() {
+  document.getElementById("surpriseBox").classList.remove("hidden");
+
+  const song = document.getElementById("song");
+  song.play();
+}
   </script>
 </body>
 </html>
