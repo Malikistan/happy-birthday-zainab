@@ -73,6 +73,33 @@
       🎉 Click for More Celebration! 🎉
     </button>
 
+    <!-- New Buttons -->
+<div class="mt-10 flex flex-wrap justify-center gap-6">
+  
+  <!-- Game Button -->
+  <button onclick="startGame()" 
+    class="bg-yellow-300 text-black font-bold px-6 py-3 rounded-full hover:scale-110 transition">
+    🎮 Play Balloon Game
+  </button>
+
+  <!-- Surprise Button -->
+  <button onclick="showSurprise()" 
+    class="bg-pink-300 text-black font-bold px-6 py-3 rounded-full hover:scale-110 transition">
+    🎁 Open Surprise
+  </button>
+
+</div>
+
+<!-- Game Area -->
+<div id="gameArea" class="hidden mt-10 relative h-96 bg-white/10 rounded-2xl overflow-hidden"></div>
+
+<!-- Surprise Section -->
+<div id="surpriseBox" class="hidden mt-10 text-center">
+  <img src="gift.jpg" class="mx-auto rounded-2xl shadow-lg w-64">
+  <p class="mt-4 text-xl">A special surprise just for you 💖</p>
+</div>
+
+<audio id="song" src="song.mp3"></audio>
     <footer class="mt-20 text-sm opacity-75">
       Made with ❤️ for your special day
     </footer>
